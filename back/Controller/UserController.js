@@ -70,8 +70,8 @@ exports.matching = async(req, res) => {
         for (let i=0;i<Mission.length; i++) {
         start_creneau = Mission[i].start_date.valueOf().toString();
         end_creneau = Mission[i].end_date.valueOf().toString();
-        if ( start_creneau > start_date && end_creneau < end_date) {
-            res.send(Mission[i])
+        if ( start_creneau >= start_date && end_creneau <= end_date) {
+            console.log(Mission[i])
         }
     }
     } catch (err) {
